@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.target-box {
+  width: 100px;
+  height: 100px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.magenta {
+  background-color: magenta;
+}
+.purple {
+  background-color: purple;
+}
+.blue {
+  background-color: blue;
+}
