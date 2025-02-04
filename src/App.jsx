@@ -54,7 +54,7 @@ const ColorGame = () => {
   const handleGuess = (color) => {
     setShowStatus(true);
     if (color === targetColor) {
-      setScore(score + 1);
+      setScore((prev) => prev + 1);
       setGameStatus("correct");
       setTimeout(startNewRound, 1500);
     } else {
@@ -73,7 +73,8 @@ const ColorGame = () => {
         <h1 className="game-title">Color Guessing Game</h1>
 
         <div data-testid="gameInstructions" className="game-instructions">
-          <p>Can you guess which button matches the target color?</p>
+          <p>The large box above the buttons shows the target color.</p>
+          <p>Click on any button below that matches this target color!</p>
         </div>
 
         <div
@@ -93,18 +94,16 @@ const ColorGame = () => {
             />
           ))}
         </div>
-        {showStatus && (
-          <div
-            data-testid="gameStatus"
-            className={`game-status ${
-              gameStatus === "correct" ? "status-correct" : "status-wrong"
-            }`}
-          >
-            {gameStatus === "correct"
-              ? "Correct! Great job!"
-              : "Wrong guess! Try again!"}
-          </div>
-        )}
+        <div
+          data-testid="gameStatus"
+          className={`game-status ${showStatus ? "visible" : ""} ${
+            gameStatus === "correct" ? "status-correct" : "status-wrong"
+          }`}
+        >
+          {gameStatus === "correct"
+            ? "Correct! Great job!"
+            : "Wrong guess! Try again!"}
+        </div>
 
         <div className="score-container" data-testid="score">
           Score: {score}

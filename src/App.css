@@ -30,6 +30,10 @@
   color: #666;
 }
 
+.game-instructions p {
+  margin: 0.5rem 0;
+}
+
 .color-box {
   width: 100%;
   height: 200px;
@@ -86,10 +90,22 @@
 
 .game-status {
   text-align: center;
-  margin-top: 1rem;
-  padding: 1rem;
+  margin-top: 0.2rem;
+  padding: 0.4rem;
   border-radius: 8px;
   animation: fadeIn 0.3s ease;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 1rem;
+}
+
+.game-status.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .status-correct {
@@ -103,7 +119,6 @@
   color: #a94442;
   border: 1px solid #ebccd1;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
